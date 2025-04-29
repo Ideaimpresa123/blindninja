@@ -1,0 +1,128 @@
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: #8b5e3c;
+  color: white;
+  overflow: hidden;
+}
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  text-align: center;
+  z-index: 10;
+  perspective: 1000px;
+}
+#menu h1 {
+  font-size: 4em;
+  margin: 0.2em 0;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+  transform: rotateX(10deg);
+  animation: pulse 2s infinite ease-in-out;
+}
+#menu p {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  color: #ffe;
+  text-shadow: 2px 2px 4px #000;
+  animation: pulse 3s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) rotateX(10deg);
+  }
+  50% {
+    transform: scale(1.05) rotateX(10deg);
+  }
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: crosshair;
+  z-index: 0;
+  background-image: url('images/wood_bg.png');
+  background-size: cover;
+}
+
+
+.floating-fruit {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+
+#logo-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+#logo-screen img {
+    width: 60%;
+    max-width: 500px;
+    animation: fadeInOut 5s ease forwards;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+body {
+    cursor: none;
+}
+#swordCursor { position: absolute; width: 300px !important; pointer-events: none; z-index: 1000; }
+
+
+#menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+#menu {
+    background: url("images/menu_background.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+#gameCanvas {
+    background: url("images/game_background.jpg") no-repeat center center;
+    background-size: cover;
+}
